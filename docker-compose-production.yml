@@ -1,0 +1,35 @@
+version: '2'
+services:
+  db:
+    restart: on-failure:10
+    image: postgres
+    volumes:
+      - data:/var/lib/postgresql/data
+  data:
+    restart: on-failure:10
+    image: postgres
+    volumes:
+      - /var/lib/postgresql
+    command: /bin/echo mysql Data-only container
+  web:
+    restart: on-failure:10
+    build: ./web
+    command: ./docker-web-entrypoint.sh
+    volumes:
+      - /code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+   # env_file: .env
+  nginx:
+    restart: on-failure:10
+    build: ./nginx/
+    volumes_from:
+      - web
+    ports:
+      - "80:80"
+    depends_on:
+      - web
+volumes:
+  data: {}

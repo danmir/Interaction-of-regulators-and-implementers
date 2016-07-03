@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% load staticfiles %}
+{% load i18n %}
+
+
+{% block head_include_block %}
+{% endblock %}
+
+{% block body_block %}
+    <!-- Page Contents -->
+    <div class="ui raised padded text container segment">
+        <h2 class="ui header">{% trans "Модуль для расчета взаимодействия регуляторов и перевозчиков" %}</h2>
+        {% if user.is_authenticated %}
+            <h3>{% trans "Чтобы произвести расчет - выбирете действие в меню сверху" %}</h3>
+        {% else %}
+            <h3>{% trans "Для дальнейших действий необходимо зарегистрироваться" %}</h3>
+        {% endif %}
+        {#        <p>#}
+        {#            <img class="ui centered medium image"#}
+        {#                 src="https://upload.wikimedia.org/math/4/1/e/41e412ac43b448a046c1608e25c1ddd2.png">#}
+        {#        </p>#}
+        {#        <p>#}
+        {#            <img class="ui centered medium image"#}
+        {#                 src="https://upload.wikimedia.org/math/e/8/a/e8a4d2128dec00fba16f66e7c322ff27.png">#}
+        {#        </p>#}
+    </div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% load staticfiles %}
+{% load i18n %}
+
+{% block head_include_block %}
+{% endblock %}
+
+{% block body_block %}
+    <!-- Page Contents -->
+    <div class="ui raised padded text container segment">
+        <h2 class="ui header">{% trans "Результат расчета" %} {{ calculation }}</h2>
+        <pre>
+            du/dt =  a*u -   b*u*v
+            dv/dt = -c*v + d*u*v
+        </pre>
+        <div class="ui stackable two column grid">
+            <div class="column">
+                {% trans "Начальные условия" %}
+                <ul class="ui list">
+                    <li>x = {{ calculation.init_condition_x }}</li>
+                    <li>y = {{ calculation.init_condition_y }}</li>
+                </ul>
+            </div>
+            <div class="column">
+                {% trans "Коэффициенты" %}
+                <ul class="ui list">
+                    <li>a = {{ calculation.init_param_a }}</li>
+                    <li>b = {{ calculation.init_param_b }}</li>
+                    <li>c = {{ calculation.init_param_c }}</li>
+                    <li>d = {{ calculation.init_param_d }}</li>
+                </ul>
+            </div>
+        </div>
+        <a href="{% static report_link %}">{% trans "Скачать в excel" %}</a>
+        <img class="ui fluid image" src="{% static g1 %}" alt="First graph"/>
+        <img class="ui fluid image" src="{% static g2 %}" alt="Second graph"/>
+        <img class="ui fluid image" src="{% static g3 %}" alt="Third graph"/>
+    </div>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+
+{% load i18n %}
+{% load staticfiles %}
+
+
+{% block head_include_block %}
+{% endblock %}
+
+{% block body_block %}
+    <!-- Page Contents -->
+    <div class="ui raised padded text container segment">
+        <h2 class="ui header">{% trans "Добавить расчет" %}</h2>
+        <div class="ui items">
+            <div class="item">
+                <div class="ui small image">
+                    <img src="{% static 'img/diffeq.png' %}">
+                </div>
+                <div class="middle aligned content">
+                    <div class="header">
+                        {% trans "Значения коэффициентов" %}
+                    </div>
+                    <div class="description">
+                        <div class="ui list">
+                            <div class="item">
+                                {% trans "u - показатель рентабельности транспортной услуги" %}
+                            </div>
+                            <div class="item">
+                                {% trans "v - жесткость регулирования" %}
+                            </div>
+                            <div class="item">
+                                {% trans "a - коэф. естественного роста конкурентноспособности" %}
+                            </div>
+                            <div class="item">
+                                {% trans "c - коэф. субсидий" %}
+                            </div>
+                            <div class="item">
+                                {% trans "b - коэф. жесткости регулирования" %}
+                            </div>
+                            <div class="item">
+                                {% trans "d - показатель безопасности транспортной услуги" %}
+                            </div>
+                            <div class="item">
+                                {% trans "х - начальная рентабельность транспортной услуги" %}
+                            </div>
+                            <div class="item">
+                                {% trans "y - начальная жесткость регулирования" %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {#        <pre>#}
+        {#            du/dt =  a*u -   b*u*v#}
+        {#            dv/dt = -c*v + d*b*u*v#}
+        {#        </pre>#}
+        <form class="ui form" id="category_calc" method="post" action="/lotka_volterra/add_calc/">
+
+            {% csrf_token %}
+            {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+            {% endfor %}
+
+            {% for field in form.visible_fields %}
+                <div class="field">
+                    {% if field.errors %}
+                        <div class="ui negative message">
+                            <div class="header">
+                                {{ field.errors }}
+                            </div>
+                        </div>
+                    {% endif %}
+                    {{ field.help_text }}
+                    {{ field }}
+                </div>
+            {% endfor %}
+
+            <input type="submit" class="ui button" name="submit" value="{% trans "Расчитать" %}"/>
+        </form>
+    </div>
+{% endblock %}

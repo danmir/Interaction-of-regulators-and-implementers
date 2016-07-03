@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load staticfiles %}
+    {% load i18n %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    {% block head_include_block %}
+    {% endblock %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.css">
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.js"></script>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+<div class="ui attached stackable menu">
+    <div class="ui container">
+        <a class="item" href="/">
+            <i class="home icon"></i> {% trans "Главная страница" %}
+        </a>
+        <a class="item">
+            <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}"/>
+                <select name="language">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %}
+                                selected="selected"{% endif %}>
+                            {{ language.name_local }} ({{ language.code }})
+                        </option>
+                    {% endfor %}
+                </select>
+                <input class="mini ui button" type="submit" value="Change language"/>
+            </form>
+        </a>
+        {% if user.is_authenticated %}
+            <a class="item" href="/lotka_volterra/add_calc">{% trans "Новый расчет" %}</a>
+            <a class="item" href="/lotka_volterra/calc_history">{% trans "Мои результаты" %}</a>
+        {% endif %}
+        <div class="right menu">
+            {% if user.is_authenticated %}
+                <a class="item">{% trans "Вы вошли как" %} "{{ user }}"</a>
+                <a class="item">
+                    <div class="ui small button" onclick="location.href='/accounts/logout'">{% trans "Выйти" %}</div>
+                </a>
+            {% else %}
+                <a class="item">
+                    <div onclick="location.href='/accounts/login'" class="ui button">{% trans "Войти" %}</div>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% block body_block %}{% endblock %}
+</body>
+
+</html>

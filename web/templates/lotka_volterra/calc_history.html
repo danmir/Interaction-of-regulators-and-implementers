@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% load staticfiles %}
+{% load i18n %}
+
+
+{% block head_include_block %}
+{% endblock %}
+
+{% block body_block %}
+    <!-- Page Contents -->
+    <div class="ui raised padded text container segment">
+        <h2 class="ui header">{% trans "История расчетов" %}</h2>
+        <div class="ui relaxed divided list">
+            {% for calc in calculations %}
+                <div class="ui padded segment">
+{#                    <a class="ui header">#}
+{#                        <button class="medium ui button">#}
+{#                        Расчет {{ calc }}#}
+{#                    </button>#}
+{#                    </a>#}
+                    <a class="ui header blue" href="{{ calc.get_absolute_url }}">{% trans "Расчет" %} {{ calc }}</a>
+                    <div class="ui stackable two column grid">
+                        <div class="column">
+                            {% trans "Начальные условия" %}
+                            <ul class="ui list">
+                                <li>x = {{ calc.init_condition_x }}</li>
+                                <li>y = {{ calc.init_condition_y }}</li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            {% trans "Коэффициенты" %}
+                            <ul class="ui list">
+                                <li>a = {{ calc.init_param_a }}</li>
+                                <li>b = {{ calc.init_param_b }}</li>
+                                <li>c = {{ calc.init_param_c }}</li>
+                                <li>d = {{ calc.init_param_d }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

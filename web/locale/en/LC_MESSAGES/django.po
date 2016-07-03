@@ -1,0 +1,220 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-21 12:56+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: Webapp/settings.py:124
+msgid "Russian"
+msgstr ""
+
+#: Webapp/settings.py:125
+msgid "English"
+msgstr ""
+
+#: lotka_volterra/calc/lokta_voltera.py:82
+msgid "Показатель рентабельности ТУ"
+msgstr "The indicator of profitability of transport services"
+
+#: lotka_volterra/calc/lokta_voltera.py:83
+#: lotka_volterra/calc/lokta_voltera.py:139
+#: lotka_volterra/calc/lokta_voltera.py:196
+msgid "Жесткость регулирования"
+msgstr "Hardness of regulation"
+
+#: lotka_volterra/calc/lokta_voltera.py:86
+msgid "время"
+msgstr "time"
+
+#: lotka_volterra/calc/lokta_voltera.py:87
+msgid "рентабельность услуг"
+msgstr "service profitability"
+
+#: lotka_volterra/calc/lokta_voltera.py:88
+msgid "Зависимость жесткости регулирования и рентабельности ТУ"
+msgstr ""
+"The dependence of the stiffness control and profitability of transport "
+"services"
+
+#: lotka_volterra/calc/lokta_voltera.py:136
+msgid "Фазовый портрет и линии уровня"
+msgstr "Trajectories and direction fields"
+
+#: lotka_volterra/calc/lokta_voltera.py:138
+#: lotka_volterra/calc/lokta_voltera.py:195
+msgid "Рентабельность транспортных услуг"
+msgstr "The profitability of transport services"
+
+#: lotka_volterra/forms.py:7
+#, fuzzy
+#| msgid "Начальные условия"
+msgid "Начальное условие x"
+msgstr "Initial condition x"
+
+#: lotka_volterra/forms.py:8
+#, fuzzy
+#| msgid "Начальные условия"
+msgid "Начальное условие y"
+msgstr "Initial condition y"
+
+#: lotka_volterra/forms.py:9
+msgid "Коэф a"
+msgstr "Coefficient a"
+
+#: lotka_volterra/forms.py:10
+msgid "Коэф b"
+msgstr "Coefficient b"
+
+#: lotka_volterra/forms.py:11
+msgid "Коэф c"
+msgstr "Coefficient c"
+
+#: lotka_volterra/forms.py:12
+msgid "Коэф d"
+msgstr "Coefficient d"
+
+#: templates/index.html:13
+msgid "Модуль для расчета взаимодействия регуляторов и перевозчиков"
+msgstr ""
+"The module for calculating the interaction between regulators and "
+"implementers"
+
+#: templates/index.html:15
+msgid "Чтобы произвести расчет - выбирете действие в меню сверху"
+msgstr "To make a calculation - choose action in navigation bar"
+
+#: templates/index.html:17
+msgid "Для дальнейших действий необходимо зарегистрироваться"
+msgstr "For further actions you need to be logged in"
+
+#: templates/layout.html:21
+msgid "Главная страница"
+msgstr "Main page"
+
+#: templates/layout.html:41
+msgid "Новый расчет"
+msgstr "New calculation"
+
+#: templates/layout.html:42
+msgid "Мои результаты"
+msgstr "My results"
+
+#: templates/layout.html:46
+msgid "Вы вошли как"
+msgstr "You are logged in as"
+
+#: templates/layout.html:48
+msgid "Выйти"
+msgstr "Log out"
+
+#: templates/layout.html:52 templates/registration/login.html:65
+msgid "Войти"
+msgstr "Log in"
+
+#: templates/lotka_volterra/add_calculation.html:13
+msgid "Добавить расчет"
+msgstr "Add a calculation"
+
+#: templates/lotka_volterra/add_calculation.html:21
+msgid "Значения коэффициентов"
+msgstr "The meanings of coefficients"
+
+#: templates/lotka_volterra/add_calculation.html:26
+msgid "u - показатель рентабельности транспортной услуги"
+msgstr "u - profitability ratio"
+
+#: templates/lotka_volterra/add_calculation.html:29
+msgid "v - жесткость регулирования"
+msgstr "v - regulatory rigidity"
+
+#: templates/lotka_volterra/add_calculation.html:32
+msgid "a - коэф. естественного роста конкурентноспособности"
+msgstr "a - rate of natural increase competitiveness"
+
+#: templates/lotka_volterra/add_calculation.html:35
+msgid "c - коэф. субсидий"
+msgstr "с - rate subsidies"
+
+#: templates/lotka_volterra/add_calculation.html:38
+msgid "b - коэф. жесткости регулирования"
+msgstr "b - rate regulation stiffness"
+
+#: templates/lotka_volterra/add_calculation.html:41
+msgid "d - показатель безопасности транспортной услуги"
+msgstr "d - transport services safety record"
+
+#: templates/lotka_volterra/add_calculation.html:44
+msgid "х - начальная рентабельность транспортной услуги"
+msgstr "x - initial profitability of transport services"
+
+#: templates/lotka_volterra/add_calculation.html:47
+msgid "y - начальная жесткость регулирования"
+msgstr "y - initial stiffness regulation"
+
+#: templates/lotka_volterra/add_calculation.html:79
+msgid "Расчитать"
+msgstr "Calculate"
+
+#: templates/lotka_volterra/calc_history.html:13
+msgid "История расчетов"
+msgstr "History of calculations"
+
+#: templates/lotka_volterra/calc_history.html:22
+msgid "Расчет"
+msgstr "Calculation"
+
+#: templates/lotka_volterra/calc_history.html:25
+#: templates/lotka_volterra/calc_result.html:19
+msgid "Начальные условия"
+msgstr "Initial conditions"
+
+#: templates/lotka_volterra/calc_history.html:32
+#: templates/lotka_volterra/calc_result.html:26
+msgid "Коэффициенты"
+msgstr "Coefficients"
+
+#: templates/lotka_volterra/calc_result.html:12
+msgid "Результат расчета"
+msgstr "Calculation result"
+
+#: templates/lotka_volterra/calc_result.html:35
+msgid "Скачать в excel"
+msgstr "Download in excel"
+
+#: templates/registration/login.html:3
+msgid "Вход"
+msgstr "Log in"
+
+#: templates/registration/login.html:30
+msgid "Войдите в свой аккаунт"
+msgstr "Log in to your account"
+
+#: templates/registration/login.html:70
+#: templates/registration/registration_form.html:60
+msgid "Зарегистрироваться"
+msgstr "Sign up"
+
+#: templates/registration/logout.html:7
+msgid "Вы вышли"
+msgstr "You have logged out"
+
+#: templates/registration/registration_complete.html:7
+msgid "Регистрация прошла успешно"
+msgstr "Registration successfully completed"
+
+#: templates/registration/registration_form.html:34
+msgid "Зарегистрируйтесь"
+msgstr "Sign up"
